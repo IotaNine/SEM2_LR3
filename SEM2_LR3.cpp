@@ -4,22 +4,24 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
     srand(time(NULL));
     unsigned int N = 0;
-    std::cout << "Введите кол-во элементов: ";
+    unsigned int R = 0;
+    std::cout << "Enter quantity of elements: ";
     std::cin >> N;
+    std::cout << "Enter range for generation capacity of conductor: ";
+    std::cin >> R;
     std::cout << std::endl;
     std::vector<Battery*> batteries;
     for (unsigned int i = 0; i < N; i++)
     {
         if (rand() % 2)
         {
-            batteries.push_back(new Parallel(1 + rand() % 10, 1 + rand() % 10));
+            batteries.push_back(new Parallel(1 + rand() % R, 1 + rand() % R));
         }
         else
         {
-            batteries.push_back(new Sequential(1 + rand() % 10, 1 + rand() % 10));
+            batteries.push_back(new Sequential(1 + rand() % R, 1 + rand() % R));
         }
     }
     for (Battery* battery : batteries)
