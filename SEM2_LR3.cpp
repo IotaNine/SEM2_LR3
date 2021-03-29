@@ -7,7 +7,7 @@ int main()
     srand(time(NULL));
     unsigned int N = 0;
     unsigned int R = 0;
-    std::cout << "Enter quantity of elements: ";
+    std::cout << "Enter quantity of batteries: ";
     std::cin >> N;
     std::cout << "Enter range for generation capacity of conductor: ";
     std::cin >> R;
