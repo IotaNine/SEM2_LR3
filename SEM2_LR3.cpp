@@ -1,4 +1,5 @@
-﻿#include <ctime>
+#include <algorithm>
+#include <ctime>
 #include "Parallel.h"
 #include "Sequential.h"
 
@@ -30,4 +31,5 @@ int main()
         std::cout << "Capacity of battery: " << battery->CountCapacity() << std::endl;
         std::cout << std::endl;
     }
+    std::for_each(batteries.begin(), batteries.end(), std::default_delete<Battery>());
 }
